@@ -1,8 +1,12 @@
-
 {
     "version": "0.2.0",
     "configurations": [
-
+        {
+            "name": "C#: <project-name> Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+        },
         {
             "name": "01 Individual Activity",
             "type": "coreclr",
@@ -15,7 +19,6 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "01 Analyze: Performance",
             "type": "coreclr",
@@ -28,20 +31,21 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "01 Code: Dynamic Arrays",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week01-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week01/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "02 Learning Activity",
             "type": "coreclr",
@@ -54,7 +58,6 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "02 Team Activity",
             "type": "coreclr",
@@ -67,7 +70,6 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "02 Analyze: Stacks",
             "type": "coreclr",
@@ -80,20 +82,21 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "02 Code: Queues",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week02-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week02/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "03 Learning Activities",
             "type": "coreclr",
@@ -106,7 +109,6 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "03 Team Activity",
             "type": "coreclr",
@@ -119,59 +121,66 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "03 Code: Sets and Maps",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week03-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week03/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "04 Code: Linked Lists",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week04-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week04/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "05 Code: Recursion",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week05-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week05/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "06 Code: Trees",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week06-code",
             "program": "dotnet",
-            "args": ["test", "-l:\"console;verbosity=normal\""],
+            "args": [
+                "test",
+                "-l:\"console;verbosity=normal\""
+            ],
             "cwd": "${workspaceFolder}/week06/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
         {
             "name": "Sandbox Project",
             "type": "coreclr",
