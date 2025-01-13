@@ -1,3 +1,8 @@
+using System.Collections.Generic;
+using System;
+using System.Linq;
+using System.Diagnostics;
+
 public static class Arrays
 {
     /// <summary>
@@ -41,26 +46,13 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        //Ensure the supplied "amount" is not less than data.Count and not zero, and data list is not null
-        if (data !== null && amount < data.Count && amount < 1)
-        {
-            //Get the length of the list.
-            int difference = data.Count - amount;
-            //Create a temporary list
-            List<int> list = new List<int>(amount);
-            for (int i = 0; i < amount; i++)
-            {
-                list.Add(data[difference]);
-                data.RemoveAt(difference);
-            }
-            //Copy the temporary list to the newly created list2
-            list<int> list2 = new List<int>(list);
-            //Merge the modified data list to list2
-            list2.AddRange(data);
-        }
-        else
-        {
-            writeLine("Enter Amount less than " + ${ data.Count});
-        }
+        //Get the length of the list and subtract the amount from it.
+        int difference = data.Count - amount;
+        //Create a temporary list to be shifted by the given amount
+        List<int> subList = data.GetRange(difference, amount);
+        //Remove the integer(s) from the given list
+        data.RemoveRange(data.Count - amount, amount);
+        //Insert the temporary list to the beginning of the list
+        data.InsertRange(0, subList);
     }
 }
