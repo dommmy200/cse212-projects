@@ -23,13 +23,15 @@ public static class Arrays
         //For each loop insert the multiples of "number" of argument passed in
         //Return the array
 
+        //Create an array of double with a capacity of the length passed as argument
         double[] numbers = new double[length];
+        //Iterate the array passed based on its capacity
         for (int i = 0; i < length; i++)
         {
-            numbers[i] = number * (i + 1);
+            numbers[i] = number * (i + 1);//For every iteration, add a higher multiple to the end of the array
         }
 
-        return numbers; // replace this return statement with your own
+        return numbers; //Return the modified array
     }
 
     /// <summary>
@@ -46,13 +48,13 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        //Get the length of the list and subtract the amount from it.
+        //Get the length of the given list and subtract the supplied amount from it.
         int difference = data.Count - amount;
         //Create a temporary list to be shifted by the given amount
         List<int> subList = data.GetRange(difference, amount);
-        //Remove the integer(s) from the given list
+        //Modify the given list by removing the corresponding integer(s) from it
         data.RemoveRange(data.Count - amount, amount);
-        //Insert the temporary list to the beginning of the list
+        //Further modify the (data) list by inserting the temporary list to the beginning
         data.InsertRange(0, subList);
     }
 }
