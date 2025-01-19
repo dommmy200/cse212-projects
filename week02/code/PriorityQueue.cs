@@ -19,20 +19,27 @@
     {
         if (_queue.Count == 0) // Verify the queue is not empty
         {
-            throw new InvalidOperationException("The queue is empty.");
+            throw new InvalidOperationException("The queue has no PriorityItems.");
         }
 
         // Find the index of the item with the highest priority to remove
         var highPriorityIndex = 0;
         for (int index = 1; index < _queue.Count - 1; index++)
         {
-            if (_queue[index].Priority >= _queue[highPriorityIndex].Priority)
+            if (_queue[index].Priority > _queue[highPriorityIndex].Priority)
+            {
                 highPriorityIndex = index;
+            }
+            else if (_queue[index].Priority == _queue[highPriorityIndex].Priority)
+            {
+                // If the items have the same value, follow FIFO rule
+            }
         }
 
         // Remove and return the item with the highest priority
         var value = _queue[highPriorityIndex].Value;
-        return value;
+        _queue.RemoveAt(highPriorityIndex);// Remove the Priority item with the highest value
+        return value;// Returning the string value of the this item but not the item itself
     }
 
     public override string ToString()
