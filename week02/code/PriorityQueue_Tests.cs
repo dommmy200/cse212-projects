@@ -6,9 +6,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
     // Scenario: Create a queue with the following values and priorities: {"One1", 1},{"Five1", 5},
     // {"Five2", 5},{"Seven1", 7},{"Two1", 2},{"Five3", 5},{"Four1", 4},{"Three1", 3} and dequeue 
     // the item with the highest priority.
