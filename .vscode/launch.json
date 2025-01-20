@@ -2,12 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: <project-name> Debug",
-            "type": "dotnet",
-            "request": "launch",
-            "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
-        },
-        {
             "name": "01 Individual Activity",
             "type": "coreclr",
             "request": "launch",
@@ -199,6 +193,18 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}/week03/teach/teach.csproj",
             "launchConfigurationId": "TargetFramework=;teach"
+        },
+        {
+            "name": "DuplicateCounter",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-myexamples",
+            "program": "${workspaceFolder}/myExamples/bin/Debug/net9.0/myExamples.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/myExamples",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
         }
     ]
 }
