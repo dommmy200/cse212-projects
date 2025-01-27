@@ -45,7 +45,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "week04", "week04", "{6F9B76
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "code", "week04\code\code.csproj", "{0FC877B2-03B3-40ED-A6F9-88F264FB9D69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{22578732-5464-40D8-8623-2F6A5523C6BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myExamples", "myExamples\myExamples.csproj", "{22578732-5464-40D8-8623-2F6A5523C6BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
