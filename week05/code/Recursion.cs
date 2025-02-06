@@ -178,17 +178,59 @@ public static class Recursion
     public static void SolveMaze(List<string> results, Maze maze, int x = 0, int y = 0, List<ValueTuple<int, int>>? currPath = null)
     {
         // If this is the first time running the function, then we need
-        // to initialize the currPath list.
+        // to initialize the currPath list. Otherwise, we will pass the
+        // currPath list to the next recursive call.
+
+        // Alternatively, you could use the null-coalescing operator to initialize the list.
+        // currPath ??= new List<ValueTuple<int, int>>();
         if (currPath == null)
         {
             currPath = new List<ValueTuple<int, int>>();
         }
 
-        // currPath.Add((1,2)); // Use this syntax to add to the current path
+        // Base case: If we are at the end of the maze, then add the path to the results list.
+        if (maze.IsEnd(x, y))
+        {
+            // Add the current and last position to the path.
+            currPath.Add((x, y));
+            // Add the path to the results list as a string.
+            results.Add(currPath.AsString());
+            return;
+        }
+        // Add the current position to the path.
+        currPath.Add((x, y));
+        // If any of the directions below are valid, then recurse, 
+        // else backtrack by removing the last position from the path.
 
-        // TODO Start Problem 5
-        // ADD CODE HERE
-
-        // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
+        // If up is a valid move, then recurse.
+        if (maze.IsValidMove(currPath, x, y - 1))
+        {
+            SolveMaze(results, maze, x, y - 1, currPath);
+            // Backtrack: Remove the last position from the path.
+            currPath.RemoveAt(currPath.Count - 1);
+        }
+        // If down is a valid move, then recurse.
+        if (maze.IsValidMove(currPath, x, y + 1))
+        {
+            SolveMaze(results, maze, x, y + 1, currPath);
+            // Backtrack: Remove the last position from the path.
+            currPath.RemoveAt(currPath.Count - 1);
+        }
+        // If right is a valid move, then recurse.
+        if (maze.IsValidMove(currPath, x + 1, y))
+        {
+            SolveMaze(results, maze, x + 1, y, currPath);
+            // Backtrack: Remove the last position from the path.
+            currPath.RemoveAt(currPath.Count - 1);
+        }
+        // If left is a valid move, then recurse.
+        if (maze.IsValidMove(currPath, x - 1, y))
+        {
+            SolveMaze(results, maze, x - 1, y, currPath);
+            // Backtrack: Remove the last position from the path.
+            currPath.RemoveAt(currPath.Count - 1);
+        }
+        // Return to the last position in the path.
+        return;
     }
 }
