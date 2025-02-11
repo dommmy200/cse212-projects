@@ -57,6 +57,9 @@ public class BinarySearchTree : IEnumerable<int>
 
     private void TraverseForward(Node? node, List<int> values)
     {
+        // Implement the TraverseForward method
+        // Traverse the tree in order (left, root, right)
+        // For instance, if the tree is [50, 30, 70, 40, 80, 20, 60], the values list should be [20, 30, 40, 50, 60, 70, 80]
         if (node is not null)
         {
             TraverseForward(node.Left, values);
@@ -81,6 +84,15 @@ public class BinarySearchTree : IEnumerable<int>
     private void TraverseBackward(Node? node, List<int> values)
     {
         // TODO Problem 3
+        // Implement the TraverseBackward method
+        // Traverse the tree in reverse order (right, root, left)
+        // For instance, if the tree is [50, 30, 70, 40, 80, 20, 60], the values list should be [80, 70, 60, 50, 40, 30, 20]
+        if (node is not null)
+        {
+            TraverseBackward(node.Right, values);
+            values.Add(node.Data);
+            TraverseBackward(node.Left, values);
+        }
     }
 
     /// <summary>
@@ -90,7 +102,10 @@ public class BinarySearchTree : IEnumerable<int>
     {
         if (_root is null)
             return 0;
-        return _root.GetHeight();
+        // Even though this wasn't part of the original (TODO Start Problem 4), 
+        // we need to add 1 to the height to stop the errors in not getting the 
+        // actual height of the tree.
+        return _root.GetHeight() + 1;
     }
 
     public override string ToString()
@@ -99,8 +114,10 @@ public class BinarySearchTree : IEnumerable<int>
     }
 }
 
-public static class IntArrayExtensionMethods {
-    public static string AsString(this IEnumerable array) {
+public static class IntArrayExtensionMethods
+{
+    public static string AsString(this IEnumerable array)
+    {
         return "<IEnumerable>{" + string.Join(", ", array.Cast<int>()) + "}";
     }
 }
